@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!--navbar-->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl px-4">
+            <div class="flex ">
+                <div class="flex space-x-7">
+                    <div>
+                        <img class="h-12 mt-2 mr-4" src="/images/logo.png" alt="">
+                    </div>
+                    <div class="container flex mx-auto h-10 mt-3">
+                        <div class="hidden lg:flex border-2 rounded">
+                            <button class="flex items-center justify-center px-4 border-r">
+                                <svg class="w-4 h-4 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z">
+                                    </path>
+                                </svg>
+                            </button>
+                            <input type="text" class="px-4 py-2 w-80" placeholder="Search...">
+                        </div>
+                        <div class="flex">
+                            <a class="flex gap-2 sm:ml-80 md:ml-96 pr-3 pr" href="account.html">
+                                <img class="h-9" src="/images/char1.png" alt="">
+                                <p class="font-bold text-blue-700 mt-1">Jonathan</p>
+                            </a>
+                            <img src="/images/massanger-icon.svg" class="h-5 mt-2 pr-3" alt="">
+                            <img src="/images/bell-icon.svg" class="h-5 mt-2" alt="">
+                        </div>
+                    </div> <!--search bar-->
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                  <button class="outline-none mobile-menu-button right-0">
+                    <svg class=" w-6 h-6 text-gray-500 hover:text-blue-500 "
+                        x-show="!showMenu"
+                        fill="none"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                  </button>
+                </div>
+            </div>
+        </div>
+        <!-- mobile menu -->
+        <div class="hidden mobile-menu">
+            <ul class="">
+                <li class="active"><a href="index.html" class="block text-sm px-2 py-4 text-white bg-blue-500 font-semibold">Home</a></li>
+                <li><a href="#stories" class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Massages</a></li>
+                <li><a href="#about" class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Broadcast</a></li>
+                <li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">Marketplalce</a></li>
+                <li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-blue-500 transition duration-300">About Us</a></li>
+                <li><a href="./login.html" class="block py-4 px-2 font-medium text-green-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log In</a></li>
+            </ul>
+        </div>
+        <script>
+            const btn = document.querySelector("button.mobile-menu-button");
+            const menu = document.querySelector(".mobile-menu");
+
+            btn.addEventListener("click", () => {
+                menu.classList.toggle("hidden");
+            });
+        </script>
+    </nav>  
+    <!--content & sidebar-->  
+    <div class="flex bg-gray-200 h-full">
+        <!--sidebar--> 
+        <div class="hidden md:flex w-2/16 bg-gray-100 p-3 shadow-lg">
+            <ul class="space-y-2 text-sm mt-14">
+                <li>
+                    <a href="index.html" class="active flex items-center space-x-3 text-gray-700 p-2 rounded font-medium hover:bg-gray-200 bg-gray-200 focus:shadow-outline">
+                        <span class="text-gray-600">
+                            <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                        </span>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="massage.html" class="flex items-center space-x-3 text-gray-700 p-2 rounded font-medium hover:bg-gray-200 focus:shadow-outline">
+                        <span class="text-gray-600">
+                            <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path>
+                            </svg>
+                        </span>
+                        <span>Massages</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="broadcast.html" class="flex items-center space-x-3 text-gray-700 p-2 rounded font-medium hover:bg-gray-200 focus:shadow-outline">
+                        <span class="text-gray-600">
+                            <img class="h-5" src="/images/broadcast-icon.svg" alt="">
+                        </span>
+                        <span>Boradcast</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="market.html" class="flex items-center space-x-3 text-gray-700 p-2 rounded font-medium hover:bg-gray-200 focus:shadow-outline">
+                        <span class="text-gray-600">
+                            <span class="text-gray-600">
+                                <img class="h-5" src="/images/store-icon.svg" alt="">
+                            </span>
+                        </span>
+                        <span>Market</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="login.html" class="flex items-center space-x-3 text-gray-700 p-2 rounded font-medium hover:bg-gray-200 focus:shadow-outline">
+                        <span class="text-gray-600">
+                            <span class="text-gray-600">
+                                <svg class="h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                                </svg>
+                            </span>
+                        </span>
+                        <span>Log Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <a href="./index.html" class="mt-5 ml-3">
+            <div class="flex gap-1">
+                <img class="h-4 mt-1" src="/images/back-icon.svg" alt="">
+                <p>Back</p>
+            </div>
+        </a>
+        <!--content-->
+        <div class="ml-5 mr-5 lg:mr-0 mt-5">
+            <!--post-->
+            <div class="max-w-sm w-full max-w-full mt-8 h-60">
+
+                <div class="border-r border-t border-b border-l border-gray-400 border-gray-400 bg-white rounded-t p-4 flex flex-col justify-between leading-normal">
+                    <div class="flex items-center">
+                        <img class="w-12 h-12 rounded-full mr-4" src="/images/char1.png" alt="Avatar of Jonathan Reinink">
+                        <div>
+                        <p class="text-gray-900 font-bold leading-none text-lg">Jonathan</p>
+                        <p class="text-gray-400 text-sm">8 hours ago</p>
+                        </div>
+                    </div>
+                    <div class="border-b-2">
+                        <div class="text-gray-900 font-bold text-xl mb-2">Can coffee make you a better developer?</div>
+                        <p class="text-gray-700 text-base mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+                    </div>
+                    <div class="flex flex-row pt-2">
+                        <div class="flex basis-1/4">
+                            <img src="/images/like-icon.svg" class="h-4 mt-1" alt="">
+                            <button class="text-gray-400 hover:text-blue-400">
+                                <p class="text-sm ml-1">40</p>
+                            </button>
+                        </div>
+                        <a href="./index.html" class="flex basis-3/4">
+                            <img src="/images/comment-icon.svg" class="h-4 mt-1" alt="">
+                            <button class="text-gray-400 hover:text-blue-400">
+                                <p class="text-sm ml-1">3 comments</p>
+                            </button>
+                        </a>
+                        <div class="flex basis-1/4">
+                            <img src="/images/share-icon.svg" class="h-4 mt-1" alt="">
+                            <button class="text-gray-400 hover:text-blue-400">
+                                <p class="text-sm ml-1">share</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <span>
+                    <div class="border-r border-t border-b border-l border-gray-400 border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+                        <div>
+                            <div class="flex items-center">
+                                <img class="w-12 h-12 rounded-full mr-4" src="/images/char3.png" alt="Avatar of Jonathan Reinink">
+                                <div>
+                                    <p class="text-gray-900 font-bold leading-none text-lg">Aan</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 text-base mb-5">Lorem ipsum sit amet JAHAHAHAHAAAAAH, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+                            </div>
+                            <div class="flex flex-row pt-1">
+                                <div class="flex basis-1/4 text-xs text-gray-400">
+                                    12 minutes ago
+                                </div>
+                                <div class="flex basis-3/4">
+                                    <img src="/images/comment-icon.svg" class="h-4 mt-1" alt="">
+                                    <button x-on:click="open = ! open" class="text-gray-400 hover:text-blue-400">
+                                        <p class="text-xs ml-1">Replay</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--comment2-->
+                        <div class="mt-5">
+                            <div class="flex items-center">
+                                <img class="w-12 h-12 rounded-full mr-4" src="/images/char1.png" alt="Avatar of Jonathan Reinink">
+                                <div>
+                                    <p class="text-gray-900 font-bold leading-none text-lg">Jonathan</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 text-base mb-5">dolor amet APAAAN SIH, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+                            </div>
+                            <div class="flex flex-row pt-1">
+                                <div class="flex basis-1/4 text-xs text-gray-400">
+                                    7 minutes ago
+                                </div>
+                                <div class="flex basis-3/4">
+                                    <img src="/images/comment-icon.svg" class="h-4 mt-1" alt="">
+                                    <button x-on:click="open = ! open" class="text-gray-400 hover:text-blue-400">
+                                        <p class="text-xs ml-1">Replay</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--comment3-->
+                        <div class="mt-5">
+                            <div class="flex items-center">
+                                <img class="w-12 h-12 rounded-full mr-4" src="/images/char2.png" alt="Avatar of Jonathan Reinink">
+                                <div>
+                                    <p class="text-gray-900 font-bold leading-none text-lg">Jonathan</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 text-base mb-5">BUAYE amet Adalah consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+                            </div>
+                            <div class="flex flex-row pt-1">
+                                <div class="flex basis-1/4 text-xs text-gray-400">
+                                    7 minutes ago
+                                </div>
+                                <div class="flex basis-3/4">
+                                    <img src="/images/comment-icon.svg" class="h-4 mt-1" alt="">
+                                    <button x-on:click="open = ! open" class="text-gray-400 hover:text-blue-400">
+                                        <p class="text-xs ml-1">Replay</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+        
+        <!--kanan-->
+        <div>
+            <div class="hidden lg:flex pl-5 mt-5 mr-5">
+                <div class="">
+                    <div class="rounded-md shadow-lg bg-white max-w-sm">
+                    <div>
+                        <h1 class="font-bold ml-5 text-xl">Popular Posts</h1>
+                        <div class="flex pl-6 pt-5">
+                        <img class="h-10 mr-3" src="/images/char1.png" alt="">
+                        <p class="text-gray-700 text-base mb-4 text-xs">
+                            Example to build on the card title of the content in this web
+                            content.
+                        </p>
+                        </div>
+                        <h3 class="pl-6 text-xs">Jonathan</h3>
+                        <p class="text-xs text-gray-300 text-base mb-4 pl-6">
+                        2 hours ago
+                        </p>
+                    </div> 
+                    <!--konten2-->
+                    <div>
+                        <div class="flex pl-6 pt-3">
+                        <img class="h-10 mr-3" src="/images/char2.png" alt="">
+                        <p class="text-gray-700 text-base mb-4 text-xs">
+                            Example to build on the card title of the content in this web
+                            content.
+                        </p>
+                        </div>
+                        <h3 class="pl-6 text-xs">Karel</h3>
+                        <p class="text-xs text-gray-300 text-base mb-4 pl-6">
+                            23 mins ago
+                        </p>
+                    </div>
+                    <!--konten3-->
+                    <div>
+                        <div class="flex pl-6 pt-3">
+                        <img class="h-10 mr-3" src="/images/char3.png" alt="">
+                        <p class="text-gray-700 text-base mb-4 text-xs">
+                            Example to build on the card title of the content in this web
+                            content.
+                        </p>
+                        </div>
+                        <h3 class="pl-6 text-xs">Aan</h3>
+                        <p class="text-xs text-gray-300 text-base mb-4 pl-6">
+                            6 hours ago
+                        </p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden lg:flex pl-5 mt-5 mr-5">
+                <div class="">
+                    <div class="rounded-md shadow-lg bg-white max-w-sm">
+                    <div>
+                        <h1 class="font-bold ml-5 text-xl">Popular Posts</h1>
+                        <div class="flex pl-6 pt-5">
+                        <img class="h-10 mr-3" src="/images/char1.png" alt="">
+                        <p class="text-gray-700 text-base mb-4 text-xs">
+                            Example to build on the card title of the content in this web
+                            content.
+                        </p>
+                        </div>
+                        <h3 class="pl-6 text-xs">Jonathan</h3>
+                        <p class="text-xs text-gray-300 text-base mb-4 pl-6">
+                        2 hours ago
+                        </p>
+                    </div> 
+                    <!--konten2-->
+                    <div>
+                        <div class="flex pl-6 pt-3">
+                        <img class="h-10 mr-3" src="/images/char2.png" alt="">
+                        <p class="text-gray-700 text-base mb-4 text-xs">
+                            Example to build on the card title of the content in this web
+                            content.
+                        </p>
+                        </div>
+                        <h3 class="pl-6 text-xs">Karel</h3>
+                        <p class="text-xs text-gray-300 text-base mb-4 pl-6">
+                        23 mins ago
+                        </p>
+                    </div>
+                    <!--konten3-->
+                    <div>
+                        <div class="flex pl-6 pt-3">
+                        <img class="h-10 mr-3" src="/images/char3.png" alt="">
+                        <p class="text-gray-700 text-base mb-4 text-xs">
+                            Example to build on the card title of the content in this web
+                            content.
+                        </p>
+                        </div>
+                        <h3 class="pl-6 text-xs">Aan</h3>
+                        <p class="text-xs text-gray-300 text-base mb-4 pl-6">
+                        6 hours ago
+                        </p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <script src="//unpkg.com/alpinejs" defer></script>
+</body>
+</html>
